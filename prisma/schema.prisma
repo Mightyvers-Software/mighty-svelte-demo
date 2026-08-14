@@ -13,11 +13,6 @@ enum TodoStatus {
   DONE
 }
 
-model Bank {
-  id        String    @id @default(cuid())
-
-}
-
 
 model Todo {
   id        String     @id @default(cuid())
