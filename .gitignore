@@ -34,9 +34,13 @@ Thumbs.db
 .github/skills/
 
 .windsurf
+
+
+# Terraform secrets
+*.tfvars
+*.tfvars.json
 cloud/terraform/.terraform
 cloud/terraform/terraform.tfvars
-
 
 ## developer
 _developer/milestones
