@@ -1,0 +1,47 @@
+# dependencies
+node_modules/
+
+# build
+.svelte-kit/
+build/
+vite.config.ts.timestamp-*
+
+# environment
+.env
+
+# database
+prisma/dev.db
+prisma/dev.db-journal
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# optional AI tooling
+.claude/
+.agents/
+.github/agents/
+.github/skills/
+
+.windsurf
+cloud/terraform/.terraform
+cloud/terraform/terraform.tfvars
+
+
+## developer
+_developer/milestones
+_developer/milestones.md
+/../generated/prisma
+src/generated/prisma
+_temp
+_temp/cloud

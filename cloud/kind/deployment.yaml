@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mighty-todo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mighty-todo
+  template:
+    metadata:
+      labels:
+        app: mighty-todo
+    spec:
+      containers:
+        - name: mighty-todo
+          image: mighty-todo:local
+          # This tells Kind to use the Docker image that we load manually.
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: 'production'
+            - name: HOST
+              value: '0.0.0.0'
+            - name: PORT
+              value: '3000'
+            - name: ORIGIN
+              value: 'http://localhost:3000'
+            - name: DATABASE_URL
+              value: 'file:/app/data/dev.db'
+          volumeMounts:
+            - name: sqlite-storage
+              mountPath: /app/data
+      volumes:
+        - name: sqlite-storage
+          persistentVolumeClaim:
+            claimName: mighty-todo-pvc

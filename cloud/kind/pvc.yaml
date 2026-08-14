@@ -1,0 +1,12 @@
+# This creates persistent storage for the SQLite database.
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mighty-todo-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

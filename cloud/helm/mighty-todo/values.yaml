@@ -1,0 +1,13 @@
+image:
+  repository: mighty-todo
+  tag: local
+  pullPolicy: Never
+
+service:
+  port: 3000
+
+storage:
+  size: 1Gi
+
+database:
+  url: file:/app/data/dev.db
